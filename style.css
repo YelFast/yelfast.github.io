@@ -273,12 +273,12 @@ span {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	left:0;
-	right:0;
+	left: 0;
+	right: 0;
 	max-height: 0%;
 	max-width: 0%;
 	border: 5px solid white;
-	transition: .5s ease-in-out;
+	transition: 0.5s ease-in-out;
 }
 
 /* Styles the close link, adds the slide down transition */
@@ -286,12 +286,12 @@ span {
 a.lightbox-close {
 	position: absolute;
 	display: block;
-	width:50px;
-	height:50px;
+	width: 50px;
+	height: 50px;
 	background: #fff;
 	top: -100px;
 	right: 0;
-	transition: .5s ease-in-out;
+	transition: 0.5s ease-in-out;
 }
 
 /* Provides part of the "X" to eliminate an image from the close link */
@@ -304,8 +304,8 @@ a.lightbox-close:before {
 	background-color: #000;
 	position: absolute;
 	left: 25px;
-	top:10px;
-	transform:rotate(45deg);
+	top: 10px;
+	transform: rotate(45deg);
 }
 
 /* Provides part of the "X" to eliminate an image from the close link */
@@ -318,8 +318,8 @@ a.lightbox-close:after {
 	background-color: #000;
 	position: absolute;
 	left: 25px;
-	top:10px;
-	transform:rotate(-45deg);
+	top: 10px;
+	transform: rotate(-45deg);
 }
 
 /* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
