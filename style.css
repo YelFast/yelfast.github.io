@@ -20,6 +20,10 @@
 	text-decoration: none;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .site-wrapper {
 	position: relative;
 	overflow-x: hidden;
