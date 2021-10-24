@@ -159,6 +159,10 @@ header .nav-menu a#active {
 		opacity: 0;
 	}
 
+	header .nav-menu li a {
+		font-size: 24px;
+	}
+
 	.burger-btn {
 		display: flex;
 	}
