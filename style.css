@@ -4,9 +4,13 @@
 }
 
 @font-face {
-	font-family: "Bebas-Neue";
+	font-family: "Bebas Neue";
 	src: url(fonts/Bebas_Neue/BebasNeue-Regular.ttf);
 }
+
+/* ==================================================
+	- RESET STYLING -
+================================================== */
 
 * {
 	margin: 0;
@@ -20,23 +24,29 @@
 	text-decoration: none;
 }
 
-html {
-	scroll-behavior: smooth;
+/* ==================================================
+	- BODY STYLING -
+================================================== */
+
+body {
+	background-color: #fff;
 }
 
-.site-wrapper {
+.site-container {
+	min-height: 100vh;
 	position: relative;
 	overflow-x: hidden;
-	min-height: 100vh;
 }
 
-/* ---------- header styling ---------- */
+/* -------------------------
+    HEADER STYLING
+------------------------- */
+
 header {
-	padding: 0 100px;
-	width: 100%;
-	height: 100px;
 	display: flex;
 	align-items: center;
+	width: 100%;
+	height: 100px;
 	background-color: #b57880;
 	user-select: none;
 }
@@ -46,317 +56,177 @@ header nav {
 	flex: 100%;
 	align-items: center;
 	justify-content: space-between;
+	margin: 0 auto;
+	padding: 0 25px;
+	max-width: 1250px;
+	position: relative;
 }
 
-header .logo {
+.logo {
 	font-size: 2.5em;
-	font-family: "Bebas-Neue";
-	letter-spacing: 5px;
+	font-family: "Bebas Neue";
+	letter-spacing: 10px;
 	color: #fff;
 }
 
-header .nav-menu {
+.nav-menu {
 	display: flex;
-	gap: 80px;
+	gap: 100px;
 }
 
-header .nav-menu a {
+.nav-menu a {
 	color: #fff;
 	text-underline-offset: 5px;
 }
 
-header .nav-menu a:hover {
+.nav-menu a:hover {
 	text-decoration: 2px underline #ffffff90;
 }
 
-header .nav-menu a#active {
+.nav-menu a#active {
 	text-decoration: 2px underline #fff;
 }
 
-/* burger-btn styling */
 .burger-btn {
-	width: 50px;
-	height: 50px;
-	position: relative;
 	display: none;
-	align-items: center;
-	justify-content: center;
 	cursor: pointer;
-	transition: all 0.5s ease-in-out;
 }
 
-.burger {
-	border-radius:8px;
+.burger-layer {
+	margin: 8px 0;
+	border-radius: 6px;
 	width: 50px;
-	height: 8px;
+	height: 6px;
 	background-color: #fff;
-	transition: all 0.5s ease-in-out;
+	transition: 0.3s;
 }
 
-.burger::before,
-.burger::after {
-	content: "";
-	position: absolute;
-	border-radius:8px;
-	width: 50px;
-	height: 8px;
-	background-color: #fff;
-	transition: all 0.5s ease-in-out;
+.burger-btn.active .burger-layer:nth-child(2) {
+	opacity: 0;
 }
 
-.burger::before {
-	transform: translateY(-16px);
+.burger-btn.active .burger-layer:nth-child(1) {
+	transform: translateY(14px) rotate(45deg);
 }
 
-.burger::after {
-	transform: translateY(16px);
+.burger-btn.active .burger-layer:nth-child(3) {
+	transform: translateY(-14px) rotate(-45deg);
 }
 
-.burger-btn.active .burger {
-	transform: translateX(-50px);
-	background-color: transparent;
-}
+/* -------------------------
+    MAIN STYLING
+------------------------- */
 
-.burger-btn.active .burger::before {
-	transform: rotate(45deg) translate(35px, -35px);
-}
-
-.burger-btn.active .burger::after {
-	transform: rotate(-45deg) translate(35px, 35px);
-}
-
-@media screen and (max-width: 1100px) {
-	header {
-		padding: 0 50px;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	* {
-		font-size: 16px;
-	}
-
-	header {
-		padding: 0 25px;
-	}
-
-	header .nav-menu {
-		gap: 0;
-		flex-direction: column;
-		align-items: center;
-		position: absolute;
-		width: 100vw;
-		height: 100%;
-		top: 100px;
-		right: 0;
-		background-color: #b57880;
-		transition: transform 0.75s ease-in;
-		transform: translateX(100%);
-	}
-
-	header .nav-menu.active {
-		transform: translateX(0%);
-	}
-
-	header .nav-menu li {
-		margin-top: 100px;
-		opacity: 0;
-	}
-
-	header .nav-menu li a {
-		font-size: 24px;
-	}
-
-	.burger-btn {
-		display: flex;
-	}
-}
-
-@media screen and (max-width: 340px) {
-	header .logo {
-		display: none;
-	}
-
-	header nav {
-		justify-content: center;
-	}
-}
-
-@keyframes navLinkFade {
-	from {
-		opacity: 0;
-		transform: translateX(50px);
-	}
-	to {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-
-/* ---------- main styling ---------- */
 main {
-	margin: 0 auto;
-	padding: 100px 50px;
-	max-width: 1000px;
+	margin: 100px auto;
+	padding: 0 25px;
+	max-width: 1250px;
 }
 
 h1 {
-	margin: 20px 0;
 	font-size: 2em;
-}
-
-h2 {
-	font-size: 0.7em;
-	letter-spacing: 5px;
-	text-transform: uppercase;
-	color: #bdbdbd;
 }
 
 p {
 	line-height: 125%;
 }
 
-p a {
-	transition: 0.25s ease;
-	text-decoration: underline;
-	text-underline-offset: 1px;
-	color: #b57880;
-}
-
-p a:hover {
-	color: #b5788090;
-}
-
 span {
 	font-size: inherit;
-	text-decoration: underline;
-	text-underline-offset: 1px;
 	color: #b57880;
 }
 
-#center-section {
+span:hover {
+	text-decoration: underline;
+	text-underline-offset: 5px;
+}
+
+#center-section-content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
 }
 
-/* ---------- home-page specific styling ---------- */
+/* >>>>> home-page specific styling <<<<< */
 
 .introduction img {
 	border-radius: 50%;
 	height: 150px;
 }
 
-/* ---------- pixel-art-page specific styling ---------- */
+.introduction h1 {
+	margin: 20px 0;
+}
+
+/* >>>>> pixel-art-page specific styling <<<<< */
 .art-showcase {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
 	gap: 20px;
+	justify-content: center;
+	user-select: none;
 }
 
-.art-showcase .lightbox img {
+.preview-image {
 	width: 250px;
 	height: 250px;
 	object-fit: cover;
-	transition: 0.5s ease;
-	box-shadow: 0 0 10px 0 #bdbdbd;
+	cursor: pointer;
+	box-shadow: 0 0 10px 2.5px #bdbdbd;
+	transition: 0.3s;
 }
 
-.art-showcase .lightbox img:hover {
+.preview-image:hover {
 	margin-top: -10px;
 	margin-bottom: 10px;
 }
 
-.lightbox-target {
+#castle {
+	background-image: url(img/art/castle.png);
+}
+
+#explorer {
+	background-image: url(img/art/explorer.png);
+}
+
+#levels {
+	background-image: url(img/art/levels.png);
+}
+
+#life {
+	background-image: url(img/art/life.png);
+}
+
+#spoopy {
+	background-image: url(img/art/spoopy.png);
+}
+
+#try-again {
+	background-image: url(img/art/try-again.png);
+}
+
+.lightbox-background {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: fixed;
-	top: -100%;
+	top: 0;
 	width: 100%;
-	width: 100%;
-	background: #00000080;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	cursor: pointer;
 }
 
-/* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
-
-.lightbox-target img {
-	margin: auto;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	max-height: 0%;
-	max-width: 0%;
-	border: 5px solid white;
-	transition: 0.5s ease-in-out;
+.lightbox-background img {
+	max-width: 80vw;
+	max-height: 80vh;
+	border: 5px solid #fff;
 }
 
-/* Styles the close link, adds the slide down transition */
-
-a.lightbox-close {
-	position: absolute;
-	display: block;
-	width: 50px;
-	height: 50px;
-	background: #fff;
-	top: -100px;
-	right: 0;
-	transition: 0.5s ease-in-out;
-}
-
-/* Provides part of the "X" to eliminate an image from the close link */
-
-a.lightbox-close:before {
-	content: "";
-	display: block;
-	height: 30px;
-	width: 1px;
-	background-color: #000;
-	position: absolute;
-	left: 25px;
-	top: 10px;
-	transform: rotate(45deg);
-}
-
-/* Provides part of the "X" to eliminate an image from the close link */
-
-a.lightbox-close:after {
-	content: "";
-	display: block;
-	height: 30px;
-	width: 1px;
-	background-color: #000;
-	position: absolute;
-	left: 25px;
-	top: 10px;
-	transform: rotate(-45deg);
-}
-
-/* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
-
-.lightbox-target:target {
-	opacity: 1;
-	top: 0;
-	bottom: 0;
-}
-
-.lightbox-target:target img {
-	max-height: 100%;
-	max-width: 100%;
-}
-
-.lightbox-target:target a.lightbox-close {
-	top: 0;
-}
-
-/* ---------- contact-page specific styling ---------- */
+/* >>>>> contact-page specific styling <<<<< */
 .contact :not(:first-child) {
 	margin-top: 20px;
-}
-
-.contact h1 {
-	margin: 0;
 }
 
 .contact .connection {
@@ -366,5 +236,45 @@ a.lightbox-close:after {
 
 .contact .connection:hover {
 	text-decoration: 2px underline #b57880;
-	text-underline-offset: 5px;
+	text-underline-offset: 10px;
+}
+
+/* ==================================================
+	- SCREEN RESPONSIVENESS -
+================================================== */
+
+@media screen and (max-width: 768px) {
+	.nav-menu {
+		gap: 0;
+		flex-direction: column;
+		align-items: center;
+		position: absolute;
+		top: 75px;
+		left: 100%;
+		width: 100vw;
+		background-color: #b57880;
+		transition: 0.5s ease-in-out;
+	}
+
+	.nav-menu li {
+		margin: 50px 0;
+	}
+
+	.nav-menu.active {
+		left: 0;
+	}
+
+	.burger-btn {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 333px) {
+	.logo {
+		display: none;
+	}
+
+	header nav {
+		justify-content: center;
+	}
 }
