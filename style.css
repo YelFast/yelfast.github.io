@@ -224,6 +224,28 @@ span:hover {
 	border: 5px solid #fff;
 }
 
+.poop {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.download {
+	margin-top: 5px;
+	padding: 10px;
+	border: 2px solid #b57880;
+	border-radius: 10px;
+	font-size: 16px;
+	letter-spacing: 3px;
+	color: #b57880;
+	transition: 0.3s ease-in-out;
+}
+
+.download:hover {
+	background-color: #b57880;
+	color: #fff;
+}
+
 /* >>>>> contact-page specific styling <<<<< */
 .contact :not(:first-child) {
 	margin-top: 20px;
