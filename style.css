@@ -32,6 +32,10 @@ body {
 	background-color: #fff;
 }
 
+body.no-scroll {
+	overflow: hidden;
+}
+
 .site-container {
 	min-height: 100vh;
 	position: relative;

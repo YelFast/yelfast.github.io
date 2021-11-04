@@ -10,11 +10,13 @@ function navSlide() {
 }
 
 // image showcase
-let previewImage = document.querySelectorAll(".preview-image")
+const body = document.querySelector("body");
+let previewImage = document.querySelectorAll(".preview-image");
 
 if(previewImage) {
-    previewImage.forEach(function(image, index) {
+    previewImage.forEach(function(image) {
         image.onclick = function() {
+            body.classList.add("no-scroll");
             let getImageCSS = window.getComputedStyle(image); // gets the css-styling of the image
             let getImageUrl = getImageCSS.getPropertyValue("background-image"); // gets specifically the background-image property
             let splitImageUrl = getImageUrl.split("/img/"); // splits the image url into two pieces, index 0 and 1
@@ -36,4 +38,5 @@ if(previewImage) {
 
 function closeImage() {
     document.querySelector(".lightbox-background").remove();
+    body.classList.remove("no-scroll");
 }
